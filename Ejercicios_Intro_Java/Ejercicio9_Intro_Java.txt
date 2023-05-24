@@ -1,0 +1,36 @@
+package Ejercicios_Intro_Java;
+
+import java.util.Scanner;
+
+public class Ejercicios_Intro_Java {
+
+    public static void main(String[] args) {
+    /*Escriba un programa que lea 20 números. Si el número leído es igual a cero se debe salir del
+    bucle y mostrar el mensaje "Se capturó el numero cero". El programa deberá calcular y mostrar el
+    resultado de la suma de los números leídos, pero si el número es negativo no debe sumarse.
+    Nota: recordar el uso de la sentencia break.*/
+        Scanner leer = new Scanner(System.in);
+        int suma;
+        int contador;
+        int num;
+        suma = 0;
+        contador = 0;
+        System.out.println("Escriba 20 números. Escriba el 0 si desea terminar antes.");
+        do {
+            num = leer.nextInt();
+            contador = contador + 1;
+            if (num > 0) {
+                suma = suma + num;
+            }
+            if (contador == 20) {
+                System.out.println("Ya han ingresado los 20 números.");
+                break;
+            }
+        } while (num != 0);
+        
+        if (num == 0) {
+            System.out.println("Se capturó el número 0");
+        }
+        System.out.println("La suma de los números ingresados positivos es: " + suma);
+    }
+}
