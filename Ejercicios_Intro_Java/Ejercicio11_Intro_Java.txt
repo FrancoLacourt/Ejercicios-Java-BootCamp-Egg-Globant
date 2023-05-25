@@ -1,0 +1,65 @@
+package Ejercicios_Intro_Java;
+
+import java.util.Scanner;
+import static jdk.nashorn.internal.objects.NativeString.toLowerCase;
+
+public class Ejercicios_Intro_Java {
+
+    public static void main(String[] args) {
+    /*Escribir un programa que procese una secuencia de caracteres ingresada por teclado y terminada
+    en punto, y luego codifique la palabra o frase ingresada de la siguiente manera: cada vocal se
+    reemplaza por el carácter que se indica en la tabla y el resto de los caracteres (incluyendo a las
+    vocales acentuadas) se mantienen sin cambios.
+    */
+        
+        String frase;
+        String fraseCod;
+        fraseCod = "";
+        
+        
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese la frase que desee codificar (Debe terminar en punto)");
+        frase = leer.nextLine();
+        
+        String fraseCodificada = codificarFrase (frase, fraseCod);
+        
+        System.out.println("La frase codificada quedaría: " + fraseCodificada);
+    
+    
+    }
+    
+    public static String codificarFrase (String frase, String fraseCod) {
+        Scanner leer = new Scanner(System.in);
+        
+        int largo = frase.length();
+        while (!".".equals(frase.substring(largo-1, largo))) {
+            System.out.println("La frase debe terminar en punto. Ingrese una frase nuevamente.");
+            frase = leer.nextLine();
+            largo = frase.length();
+        }
+        
+        for (int i = 0; i < largo; i++) {
+            switch (toLowerCase(frase.substring(i,i+1))) {
+                case "a":
+                    fraseCod = fraseCod + "@";
+                    break;
+                case "e":
+                    fraseCod = fraseCod + "#";
+                    break;
+                case "i":
+                    fraseCod = fraseCod + "$";
+                    break;
+                case "o":
+                    fraseCod = fraseCod + "%";
+                    break;
+                case "u":
+                    fraseCod = fraseCod + "*";
+                    break;
+                default:
+                    fraseCod = fraseCod + (frase.substring(i, i+1));
+            }
+        }
+        return fraseCod;
+    }
+    
+}
