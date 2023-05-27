@@ -1,0 +1,32 @@
+package Ejercicios_Intro_Java;
+
+import java.util.Scanner;
+
+public class Ejercicios_Intro_Java {
+
+    public static void main(String[] args) {
+    /*Utilizando un Bucle for, aloja en el vector Equipo, los nombres de tus compañeros de equipo
+    */
+        Scanner leer = new Scanner(System.in);
+        
+        String[] nombres = new String [5];
+        int contador = 0;
+        
+        for (int i = 0; i < 5; i++) {
+            contador++;
+            System.out.println("Ingrese el nombre del estudiante número " + contador);
+            nombres[i] = leer.nextLine();
+            
+        }
+        for (int i = 0; i < 5; i++) {
+            if (i == 4) {
+                System.out.println("[" + nombres[i] + "]");
+            } else {
+            System.out.print("[" + nombres[i] + "],");
+                
+            }
+        }
+    }
+
+    
+}
