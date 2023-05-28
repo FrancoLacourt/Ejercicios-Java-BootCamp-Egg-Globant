@@ -1,0 +1,25 @@
+package EjerciciosJava;
+
+import java.util.Scanner;
+
+public class EjerciciosPrincipales_Java {
+
+    /*Crear un programa que pida una frase y si esa frase es igual a “eureka” el programa
+        pondrá un mensaje de Correcto, sino mostrará un mensaje de Incorrecto. Nota: investigar
+        la función equals() en Java.
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Ingrese una frase que sea igual a `eureka`.");
+        String frase = input.nextLine();
+
+        if (frase.equals("eureka")) {
+            System.out.println("CORRECTO");
+        } else {
+            System.out.println("INCORRECTO");
+        }
+
+    }
+
+}
