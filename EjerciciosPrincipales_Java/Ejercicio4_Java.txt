@@ -1,0 +1,24 @@
+package EjerciciosJava;
+
+    import java.util.Scanner;
+
+
+  public class EjerciciosPrincipales_Java {
+    
+        /*Dada una cantidad de grados centígrados se debe mostrar su equivalente en grados
+        Fahrenheit. La fórmula correspondiente es: F = 32 + (9 * C / 5).
+        */
+    
+      public static void main(String[] args) {
+         Scanner input = new Scanner(System.in);
+         
+          System.out.println("Ingrese la temperatura en grados centígrados que desee pasar a Fahrenheit");
+          float tempCentigrados = input.nextFloat();
+          
+         float tempFahrenheit = 32 + (9*tempCentigrados/5);
+         
+          System.out.println(tempCentigrados + " grados centígrados son " + tempFahrenheit + " grados Fahrenheit");
+          
+      }
+      
+}
