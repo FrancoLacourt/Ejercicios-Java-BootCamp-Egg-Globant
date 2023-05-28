@@ -1,8 +1,7 @@
 package EjerciciosJava;
 
     import java.util.Scanner;
-import static jdk.nashorn.internal.objects.NativeString.toLowerCase;
-import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
+
 
   public class EjerciciosPrincipales_Java {
     
@@ -14,8 +13,8 @@ import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
          Scanner leer = new Scanner(System.in);
           System.out.println("Ingrese una frase.");
           String frase = leer.nextLine();
-          System.out.println("La frase ingresada en mayúsculas es: " + toUpperCase(frase));
-          System.out.println("La frase ingresada en minúsculas es: " + toLowerCase(frase));
+          System.out.println("La frase ingresada en mayúsculas es: " + frase.toUpperCase());
+          System.out.println("La frase ingresada en minúsculas es: " + frase.toLowerCase());
       }
       
 }
