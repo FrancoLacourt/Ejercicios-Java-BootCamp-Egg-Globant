@@ -1,0 +1,28 @@
+package EjerciciosJava;
+
+    import java.util.Scanner;
+
+
+  public class EjerciciosPrincipales_Java {
+    
+        /*Crear un programa que dado un numero determine si es par o impar.
+        */
+    
+      public static void main(String[] args) {
+         Scanner input = new Scanner(System.in);
+         
+          System.out.println("Ingrese el número que desee saber si es par o impar.");
+          int num = input.nextInt();
+          
+          if (Par(num)) {
+              System.out.println("El número " + num + " es par.");
+          } else {
+              System.out.println("El número " + num + " es impar.");
+          }
+      }
+      
+      public static boolean Par (int num) {
+          
+          return num % 2 == 0;
+      }
+}
