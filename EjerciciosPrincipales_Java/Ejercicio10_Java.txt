@@ -1,0 +1,34 @@
+package EjerciciosJava;
+
+import java.util.Scanner;
+
+public class EjerciciosPrincipales_Java {
+
+    /*Escriba un programa en el cual se ingrese un valor límite positivo, y a continuación solicite
+    números al usuario hasta que la suma de los números introducidos supere el límite inicial.
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int valorLimite;
+        int num;
+        int suma;
+        suma = 0;
+        
+        System.out.println("Ingrese un valor límite positivo");
+        valorLimite = input.nextInt();
+        
+        while (valorLimite <= 0) {
+            System.out.println("El valor límite debe ser positivo. Ingrese un nuevo valor.");
+            valorLimite = input.nextInt();
+        }
+        
+        System.out.println("Ingrese números, hasta que la suma de estos superen al valor límite (El programa terminará de forma automática)");
+        
+        while (suma <= valorLimite) {
+            num = input.nextInt();
+            suma += num;
+        }
+        
+        System.out.println("La suma (" + suma + ") de los números ingresados ha superado el valor límite (" + valorLimite + ")");
+    }
+}
