@@ -1,0 +1,48 @@
+package EjerciciosJava;
+
+import java.util.Scanner;
+
+public class EjerciciosPrincipales_Java {
+
+    /*Dibujar un cuadrado de N elementos por lado utilizando el carácter “*”. Por ejemplo, si el
+    cuadrado tiene 4 elementos por lado se deberá dibujar lo siguiente:
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int lado;
+
+        System.out.println("Ingrese el número de elementos por lado que tendrá el cuadrado.");
+        lado = input.nextInt();
+
+        while (lado <= 0) {
+            System.out.println("Ingrese un valor mayor a 0");
+            lado = input.nextInt();
+        }
+
+        for (int i = 0; i < lado; i++) {
+
+            if (i == 0 || i == lado - 1) {
+
+                for (int j = 0; j < lado; j++) {
+                    System.out.print("* ");
+                }
+                System.out.println("");
+            } else {
+                for (int j = 0; j < lado; j++) {
+                    if (j == 0) {
+                        System.out.print("* ");
+                    } else {
+                        if (j == lado - 1) {
+                            System.out.println("*");
+                        } else {
+                            if (j != lado - 1) {
+                                System.out.print("  "); // Dejo 2 espacios porque uno corresponde al espacio que dejo de normal entre asterisco y asterisco, y otro que reemplaza
+                                                        // al asterisco que iría en su lugar.
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
