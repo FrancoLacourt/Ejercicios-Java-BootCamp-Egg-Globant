@@ -1,0 +1,55 @@
+package ejerciciosprincipales_java;
+
+import java.util.Scanner;
+
+
+public class EjerciciosPrincipales_Java {
+    
+    /* 
+    Crea una aplicación que a través de una función nos convierta una cantidad de euros
+    introducida por teclado a otra moneda, estas pueden ser a dólares, yenes o libras. La
+    función tendrá como parámetros, la cantidad de euros y la moneda a converir que será
+    una cadena, este no devolverá ningún valor y mostrará un mensaje indicando el cambio
+    (void).
+    El cambio de divisas es:
+    * 0.86 libras es un 1 €
+    * 1.28611 $ es un 1 €
+    * 129.852 yenes es un 1 €
+    
+    */    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double euros;
+        String moneda;
+        
+        System.out.println("Ingrese cuántos Euros desea cambiar.");
+        euros = input.nextDouble();
+        
+        input.nextLine();
+        
+        System.out.println("¿A qué moneda desea convertirlos? ¿dólares, libras, o yenes?");
+        moneda = input.nextLine();
+        
+        while (!"dolares".equalsIgnoreCase(moneda) && !"libras".equalsIgnoreCase(moneda) && !"yenes".equalsIgnoreCase(moneda)) {
+            System.out.println("La moneda ingresada, no está entre las opciones disponibles. Intente nuevamente.");
+            moneda = input.nextLine();
+        }
+        
+        cambioDeDivisas(euros,moneda);
+    }
+    
+    public static void cambioDeDivisas (double euros, String moneda) {
+        
+        switch (moneda.toLowerCase()) {
+            case "dolares":
+                System.out.println(euros + " € son " + 1.28611*euros + " $ (dólares)");
+                break;
+            case "libras":
+                System.out.println(euros + " € son " + 0.86*euros + " £ (libras)");
+                break;
+            case "yenes":
+                System.out.println(euros + " € son " + 129.852*euros + " ¥ (yenes)");
+                break;
+        }       
+    }   
+}
