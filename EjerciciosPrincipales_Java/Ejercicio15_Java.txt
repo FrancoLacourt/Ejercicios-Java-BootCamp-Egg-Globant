@@ -1,0 +1,27 @@
+package ejerciciosprincipales_java;
+
+import java.util.Scanner;
+
+public class EjerciciosPrincipales_Java {
+
+    /* 
+    Realizar un algoritmo que rellene un vector con los 100 primeros números enteros y los
+    muestre por pantalla en orden descendente.
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int[] vector = new int[100];
+
+        for (int i = 99; i > -1; i--) { // Arranco en 99 porque si quisiera arrancar en 100, el programa no se va a ejecutar. Supongo que porque piensa que puede llegar a hacer màs
+                                        // de 100 vueltas y eso no entraría en el vector. Pero no estoy 100% seguro. 
+                                        // Y le asigno el valor i+1 para que valla de 100 a 1
+            vector[i] = i+1;
+            if (i == 0) {
+                System.out.println("[" + vector[i] + "]");
+            } else {
+                System.out.print("[" + vector[i] + "],");
+            }
+        }
+    }
+}
