@@ -1,0 +1,48 @@
+package EjerciciosJava;
+
+import java.util.Scanner;
+
+public class EjerciciosPrincipales_Java {
+
+    /*Realizar un programa que simule el funcionamiento de un dispositivo RS232, este tipo de
+    dispositivo lee cadenas enviadas por el usuario. Las cadenas deben llegar con un formato
+    fijo: tienen que ser de un máximo de 5 caracteres de largo, el primer carácter tiene que ser
+    X y el último tiene que ser una O.
+    Las secuencias leídas que respeten el formato se consideran correctas, la secuencia
+    especial “&&&&&” marca el final de los envíos (llamémosla FDE), y toda secuencia distinta
+    de FDE, que no respete el formato se considera incorrecta.
+    Al finalizar el proceso, se imprime un informe indicando la cantidad de lecturas correctas e
+    incorrectas recibidas. Para resolver el ejercicio deberá investigar cómo se utilizan las
+    siguientes funciones de Java Substring(), Length(), equals().
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int correctas;
+        int incorrectas;
+        String cadena;
+        int length;
+        
+        correctas = 0;
+        incorrectas = 0;
+                
+        
+        System.out.println("Ingrese cadenas de 5 caracteres. Empezando con una ¨X¨ y terminando con una ¨O¨");
+        do {
+            cadena = input.nextLine();
+            length = cadena.length();
+            
+            if (cadena.substring(0,1).equals("X") && cadena.substring(length-1,length).equals ("O") && length <= 5) {
+                correctas ++;
+            } else {
+                incorrectas ++;
+            }
+            
+        } while (!cadena.equals("&&&&&"));
+        
+        incorrectas --; // Le resto una para sacarle la cadena especial que se suma a las incorrectas.
+        
+        System.out.println("Se han ingresado:");
+        System.out.println(correctas + " cadenas correctas.");
+        System.out.println(incorrectas + " cadenas incorrectas.");
+    }
+}
