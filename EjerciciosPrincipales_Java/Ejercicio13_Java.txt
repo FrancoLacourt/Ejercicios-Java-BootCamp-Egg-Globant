@@ -21,28 +21,16 @@ public class EjerciciosPrincipales_Java {
 
         for (int i = 0; i < lado; i++) {
 
-            if (i == 0 || i == lado - 1) {
-
-                for (int j = 0; j < lado; j++) {
+            for (int j = 0; j < lado; j++) {
+                if (i == 0 || j == 0 || j == lado-1 || i == lado - 1) {
                     System.out.print("* ");
-                }
-                System.out.println("");
-            } else {
-                for (int j = 0; j < lado; j++) {
-                    if (j == 0) {
-                        System.out.print("* ");
-                    } else {
-                        if (j == lado - 1) {
-                            System.out.println("*");
-                        } else {
-                            if (j != lado - 1) {
-                                System.out.print("  "); // Dejo 2 espacios porque uno corresponde al espacio que dejo de normal entre asterisco y asterisco, y otro que reemplaza
-                                                        // al asterisco que iría en su lugar.
-                            }
-                        }
-                    }
+
+                } else {
+                    System.out.print("  "); // Dejo 2 espacios porque uno corresponde al espacio que dejo de normal entre asterisco y asterisco, y otro que reemplaza
+                    // al asterisco que iría en su lugar.
                 }
             }
+            System.out.println("");
         }
     }
 }
