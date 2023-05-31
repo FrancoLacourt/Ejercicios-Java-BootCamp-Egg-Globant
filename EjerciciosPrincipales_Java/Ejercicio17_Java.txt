@@ -1,0 +1,56 @@
+package ejerciciosprincipales_java;
+
+import java.util.Scanner;
+
+public class EjerciciosPrincipales_Java {
+
+    /* 
+    Recorrer un vector de N enteros contabilizando cuántos números son de 1 dígito, cuántos
+    de 2 dígitos, etcétera (hasta 5 dígitos).
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int N;
+        int digitos1 = 0;
+        int digitos2 = 0;
+        int digitos3 = 0;
+        int digitos4 = 0;
+        int digitos5 = 0;
+        
+        System.out.println("Ingrese el tamaño que desea que tenga la matriz");
+        N = input.nextInt();
+        
+        int[] vector = new int [N];
+        
+        for (int i = 0; i < N; i++) {
+            vector[i] = (int) (Math.random() * 12000);
+            // Puse hasta 12000 para que abarque todos los dígitos.
+            if (i == N - 1) {
+                System.out.println("[" + vector[i] + "]");
+            } else {                                            // Acá imprimo el vector.
+                System.out.print("[" + vector[i] + "],");
+            }
+            
+            if (vector[i] >= 0 && vector[i] <= 9) {
+                digitos1 ++;
+            } else if (vector[i] >= 10 && vector[i] <= 99) {           
+                digitos2 ++;
+            } else if (vector[i] >= 100 && vector[i] <= 999) {
+                digitos3 ++;
+            } else if (vector[i] >= 1000 && vector[i] <= 9999) {
+                digitos4 ++;
+            } else {
+                digitos5 ++;
+            }
+        }
+        
+        System.out.println("Hay " + digitos1 + " números de 1 dígito");
+        System.out.println("Hay " + digitos2 + " números de 2 dígitos");
+        System.out.println("Hay " + digitos3 + " números de 3 dígitos");
+        System.out.println("Hay " + digitos4 + " números de 4 dígitos");
+        System.out.println("Hay " + digitos5 + " números de 5 dígitos");
+    }
+}
+
+// Otra forma de resolverlo podría ser ir dividiendo el número por 10 hasta que llegue a 0 (usando la función del valor absoluto)
+// y contar cuántas veces se dividió. Pero sabiendo que solo va a ser hasta 5 dígitos, me pareció más práctico evaluando cantidades.

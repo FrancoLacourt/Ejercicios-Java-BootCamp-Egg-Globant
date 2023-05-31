@@ -1,0 +1,60 @@
+package ejerciciosprincipales_java;
+
+import java.util.Scanner;
+
+public class EjerciciosPrincipales_Java {
+
+    /* 
+    Realizar un algoritmo que rellene un vector de tamaño N con valores aleatorios y le pida al
+    usuario un numero a buscar en el vector. El programa mostrará donde se encuentra el
+    numero y si se encuentra repetido
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int contador;
+        int N;
+        int num;
+
+        contador = 0;
+
+        System.out.println("Ingrese el tamaño que tendrá el vector.");
+        N = input.nextInt();
+
+        int[] vector = new int[N];
+
+        System.out.println("");
+        System.out.println("El vector generado es:");
+        for (int i = 0; i < N; i++) {
+            
+            vector[i] =(int) (Math.random() * 10 + 1);  
+            // Poniendo (int) hago que los nùmeros aleatorios que se generen sean enteros. y multiplicando
+            // por 10 y sumando 1, hago que los nùmeros estèn entre 1 y 10.
+            if (i == N - 1) {
+                System.out.println("[" + vector[i] + "]");
+            } else {
+                System.out.print("[" + vector[i] + "],");
+            }
+        }
+
+        System.out.println("Ingrese el número que desea buscar en el vector");
+        num = input.nextInt();
+        for (int i = 0; i < N; i++) {
+            
+            if (vector[i] == num) {
+                contador ++;
+                if (contador == 1) {
+                    // Solo cuando el contador sea igual a 1 (cuando encuentre por primera vez el número) escribe esta frase esta frase.
+                    System.out.print("El número " + num + " se encuentra en las siguientes posiciones: ");
+                }
+                System.out.print("(" + (i+1) + ")");
+                
+            }
+        }
+        System.out.println("");
+        
+        if (contador == 0) {
+            System.out.println("El número ingresado no se encuentra en el vector.");
+            // Si el contador == 0 es porque nunca se encontrò el nùmero.
+        }
+    }
+}
