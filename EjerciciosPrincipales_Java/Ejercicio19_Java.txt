@@ -1,0 +1,79 @@
+package ejerciciosprincipales_java;
+
+import java.util.Scanner;
+
+public class EjerciciosPrincipales_Java {
+
+    /* 
+    Realice un programa que compruebe si una matriz dada es anti simétrica. Se dice que una
+    matriz A es anti simétrica cuando ésta es igual a su propia traspuesta, pero cambiada de
+    signo. Es decir, A es anti simétrica si A = -AT. La matriz traspuesta de una matriz A se
+    denota por AT y se obtiene cambiando sus filas por columnas (o viceversa).
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ingrese el tamaño que tendrá la matriz");
+        int N = input.nextInt();
+
+        int[][] matrizA = new int[N][N];
+        int[][] matrizAT = new int[N][N];
+
+        llenarMatriz(matrizA, N);
+        System.out.println("La matriz A es:");
+        System.out.println("");
+        mostrarMatriz(matrizA, N);
+        System.out.println("");
+        matrizTranspuesta(matrizAT, matrizA, N);
+        System.out.println("La matriz AT (matriz transpuesta) es:");
+        System.out.println("");
+        mostrarMatriz(matrizAT, N);
+        System.out.println("");
+        esAntiSimetrica(matrizA, matrizAT, N);
+    }
+
+    public static void llenarMatriz(int[][] matriz, int N) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Escriba todos los elementos de la matriz.");
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                matriz[i][j] = input.nextInt();
+            }
+        }
+    }
+
+    public static void mostrarMatriz(int[][] matriz, int N) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print("[" + matriz[i][j] + "]");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void matrizTranspuesta(int[][] matriz, int[][] matrizA, int N) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                matriz[i][j] = matrizA[j][i];
+            }
+        }
+    }
+
+    public static void esAntiSimetrica(int[][] matrizA, int[][] matrizAT, int N) {
+        boolean antiSimetrica = false;
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (matrizA[i][j] != -matrizAT[i][j]) {
+                    antiSimetrica = true;
+                    break;
+                }
+            }
+            if (antiSimetrica) {
+                System.out.println("La matriz A NO es anti simétrica.");
+                break;
+            } 
+        }
+        if (antiSimetrica == false) {
+            System.out.println("La matriz A SI es anti simétrica.");
+        }
+    }
+}
