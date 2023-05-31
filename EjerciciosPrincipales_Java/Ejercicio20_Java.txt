@@ -1,0 +1,123 @@
+package ejerciciosprincipales_java;
+
+import java.util.Scanner;
+
+public class EjerciciosPrincipales_Java {
+
+    /* 
+    Un cuadrado mágico 3 x 3 es una matriz 3 x 3 formada por números del 1 al 9 donde la
+    suma de sus filas, sus columnas y sus diagonales son idénticas. Crear un programa que
+    permita introducir un cuadrado por teclado y determine si este cuadrado es mágico o no.
+    El programa deberá comprobar que los números introducidos son correctos, es decir,
+    están entre el 1 y el 9.
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int [][] matriz = new int [3][3];
+        
+        llenarMatriz(matriz);
+        mostrarMatriz(matriz);
+        System.out.println("");
+        matrizMagica(matriz);
+        
+    }
+    
+    public static void llenarMatriz(int [][] matriz) {
+        Scanner input = new Scanner(System.in);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.println("Ingrese el valor del elemento [" + i + "," + j + "]");
+                matriz[i][j] = input.nextInt();
+                while (matriz[i][j] < 1 || matriz[i][j] > 9) {
+                    System.out.println("El número ingresado debe estar entre 1 y 9. Ingrese un nuevo número para el elemento [" + i + "," + j + "]");
+                    matriz[i][j] = input.nextInt();
+                }
+            }
+        }
+        System.out.println("");
+    }
+    
+    public static void mostrarMatriz(int [][] matriz) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print("[" + matriz[i][j] + "]");
+            }
+            System.out.println("");
+        }
+    }
+    
+    public static void matrizMagica(int [][] matriz) {
+        int suma;
+        int sumaReferencia;
+        
+        suma = 0;
+        sumaReferencia = 0;
+        
+        //Sumo la primera columna y la tomo como referencia
+        for (int i = 0; i < 3; i++) {
+            sumaReferencia += matriz[i][0];
+        }
+        
+        //Sumo las columnas
+        for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 3; i++) {
+                if (suma == sumaReferencia) {
+                    suma = 0;
+                }
+                suma += matriz[i][j];
+                /* Voy sumando cada elemento de la columna. Si al finalizar la suma
+                   de la columna, la suma es igual a la suma de referencia, comenzará
+                   el nuevo bucle para la siguiente columna. Inicializando la suma en 0.
+                */
+            }
+        }
+        //Solo su la última suma realizada es igual a la suma referencia, se ejecutará
+        //este condicional.
+        if (suma == sumaReferencia) {
+            suma = 0;
+            //Similar a las columnas, pero para las filas.
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (suma == sumaReferencia) {
+                        suma = 0;
+                    }
+                    suma += matriz[i][j];
+                }
+            }
+        }
+        
+        //Solo su la última suma realizada es igual a la suma referencia, se ejecutará
+        //este condicional.
+        if (suma == sumaReferencia) {
+            suma = 0;
+            
+            for (int i = 0; i < 3; i++) {
+                suma += matriz[i][i];
+                // Igualo la posición de j a la de i ya que la diagonal principal es cuando coinciden (i,j)
+                // ej; (0,0) (1,1) etc
+            }
+        }
+        
+        //Solo su la última suma realizada es igual a la suma referencia, se ejecutará
+        //este condicional.
+        if (suma == sumaReferencia) {
+            suma = 0;
+            
+            for (int i = 0; i < 3; i++) {
+                suma += matriz[i][3-1-i];
+            }
+            // Para la diagonal secundaria, usé un único bucle en el que i comienza desde la primer fila y j comienza desde
+	    // la última columna (num-1). Y por cada bucle, j va a disminuir la misma cantidad que aumenta i.
+        }
+        
+        //Solo su la última suma realizada es igual a la suma referencia, se ejecutará
+        //este condicional.
+        if (suma == sumaReferencia) {
+            System.out.println("La matriz cuadrada es mágica!");
+            System.out.println("La suma de la matriz cuadrada en todas sus direcciones es: " + suma);
+        } else {
+            System.out.println("La matriz cuadrada ingresada, no es mágica. :'( ");
+        }
+    }
+}
