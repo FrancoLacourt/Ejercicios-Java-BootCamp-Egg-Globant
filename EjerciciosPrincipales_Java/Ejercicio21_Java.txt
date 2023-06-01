@@ -68,9 +68,20 @@ public class EjerciciosPrincipales_Java {
                 if (matrizM[i][j] == matrizP[0][0] && matrizM[i][j + 1] == matrizP[0][1] && matrizM[i][j + 2] == matrizP[0][2]) {
                     if (matrizM[i + 1][j] == matrizP[1][0] && matrizM[i + 1][j + 1] == matrizP[1][1] && matrizM[i + 1][j + 2] == matrizP[1][2]) {
                         if (matrizM[i + 2][j] == matrizP[2][0] && matrizM[i + 2][j + 1] == matrizP[2][1] && matrizM[i + 2][j + 2] == matrizP[2][2]) {
+                            
                             matrizEnM = true;
                             fila = i;
                             columna = j;
+                            /* Lo que hago acá es básicamente ir recorriendo la matriz hasta que encuentre un elemento que coincida con el primer elemento de la matriz.
+                               Si coinciden, también verifico que los 2 siguientes coincidan con los 2 siguientes sumándole 1 a la j actual.
+                               Si los 3 coinciden, pongo un segundo condicional en el que en la fila que sigue (i+1) también tienen que coincidir 3 elementos en las mismas j
+                               con los 3 elementos de la segunda fila de la otra matriz.
+                               Si los 3 coinciden, pongo un tercer condicional en el que en la fila que sigue (i+2) también tienen que coincidir 3 elementos en las mismas j
+                               con los 3 elementos de la tercer y última fila de la otra matriz.
+                            
+                            Y solo si todos esos condicionales se cumplen, el booleano "matrizEnM" pasa a ser true. Y además guardo la "i" y "j" actuales.
+                            para después usarlas para imprimir todas las posiciones.
+                            */
                         }
                     }
                 }
@@ -78,7 +89,7 @@ public class EjerciciosPrincipales_Java {
         }
 
         if (matrizEnM) {
-            System.out.println("Como podemos observar nuestra submatriz P se encuentra en la matriz M en los índices:");
+            System.out.println("Como podemos observar, nuestra submatriz P se encuentra en la matriz M en los índices:");
             System.out.print("(" + fila + "," + columna + ")-" + "(" + fila + "," + (columna + 1) + ")-" + "(" + fila + "," + (columna + 2) + ")-");
             System.out.print("(" + (fila + 1) + "," + columna + ")-" + "(" + (fila + 1) + "," + (columna + 1) + ")-" + "(" + (fila + 1) + "," + (columna + 2) + ")-");
             System.out.print("(" + (fila + 2) + "," + columna + ")-" + "(" + (fila + 2) + "," + (columna + 1) + ")-" + "(" + (fila + 2) + "," + (columna + 2) + ")");
@@ -91,4 +102,4 @@ public class EjerciciosPrincipales_Java {
 
 //El ejercicio está hecho para que se pueda trabajar con una matriz que genere números aleatorios.
 //Probablemente se pueda hacer de una forma más eficiente, pero esto es lo único que se me ocurrió de momento.
-//Puedo decir que por lo menos funciona.
+//Aunque de esta forma, imprimo todos los subíndices de todos los elementos. Y además funciona sin errores.
