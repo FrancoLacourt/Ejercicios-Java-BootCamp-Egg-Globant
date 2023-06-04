@@ -78,5 +78,5 @@ public class Ejercicio05_Extra {
 }
 
 /*
-Soy conciente de que el ejercicio no pedía algo tan completo. Simplemente lo hice así para practicar.
+Soy consciente de que el ejercicio no pedía algo tan completo. Simplemente lo hice así para practicar.
 */
