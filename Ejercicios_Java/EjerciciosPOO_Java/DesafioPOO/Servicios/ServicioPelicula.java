@@ -34,10 +34,6 @@ public class ServicioPelicula {
         peliculas.add(nuevaPelicula);
     }
 
-    public String nombre() {
-        return pelicula.getTitulo();
-    }
-
     public void peliculasDisponibles() {
         for (Pelicula movie : peliculas) {
             System.out.println(movie.getTitulo() + ", " + movie.getGenero() + ", " + movie.getAnio() + ", " + movie.getDuracion() + " minutos");
