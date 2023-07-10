@@ -18,30 +18,25 @@ informa al usuario. Si no, se hace la división y se devuelve el resultado al ma
 
 */
 
-
 package ejercicio03poo;
 
-import Entity.Operation;
 import Service.OperationService;
 
-
 public class Ejercicio03POO {
-
 
     public static void main(String[] args) {
         
         OperationService os = new OperationService();
-        Operation operationNumbers = os.createOperation();
+        os.createOperation();
         
         System.out.println("");
-        os.addition(operationNumbers);
+        os.addition();
         System.out.println("");
-        os.substract(operationNumbers);
+        os.substract();
         System.out.println("");
-        os.multiply(operationNumbers);
+        os.multiply();
         System.out.println("");
-        os.divide(operationNumbers);
+        os.divide();
 
-    }
-    
+    }   
 }

@@ -23,19 +23,16 @@ delante de -b
 */
 package extraejercicio03;
 
-import Entity.Roots;
 import Service.RootsService;
 
-
 public class ExtraEjercicio03 {
-
 
     public static void main(String[] args) {
         
         RootsService rs = new RootsService();
-        Roots coef = rs.loadCoefficients();
+        rs.loadCoefficients();
         System.out.println("");
         
-        rs.calculate(coef);
+        rs.calculate();
     }
 }

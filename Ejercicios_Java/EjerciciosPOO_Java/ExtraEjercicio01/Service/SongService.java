@@ -4,12 +4,13 @@ package Service;
 import Entity.Song;
 import java.util.Scanner;
 
-
 public class SongService {
+    
+    Song s = new Song();
+    
     Scanner sc = new Scanner(System.in);
     
-    public Song loadSong() {
-        Song s = new Song();
+    public Song loadSong() {    
         
         System.out.println("Ingrese el título de la canción.");
         s.setTitle(sc.nextLine());
@@ -19,7 +20,7 @@ public class SongService {
         return s;
     }
     
-    public void showSong(Song s) {
+    public void showSong() {
         System.out.println(s.toString());
     }
 }

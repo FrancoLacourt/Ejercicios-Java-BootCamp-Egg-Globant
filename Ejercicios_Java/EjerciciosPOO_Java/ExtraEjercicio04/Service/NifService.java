@@ -4,10 +4,9 @@ package Service;
 import Entity.Nif;
 import java.util.Scanner;
 
-
-
 public class NifService {
-    private Nif nif = new Nif();
+    
+     Nif nif = new Nif();
     
     public Nif createNif() {
         Scanner sc = new Scanner(System.in);

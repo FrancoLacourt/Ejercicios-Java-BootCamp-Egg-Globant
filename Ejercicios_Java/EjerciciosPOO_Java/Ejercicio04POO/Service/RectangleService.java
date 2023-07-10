@@ -7,11 +7,10 @@ import java.util.Scanner;
 
 public class RectangleService {
     
+    Rectangle r1 = new Rectangle();
     
     public Rectangle createRectangle() {
-        Scanner input = new Scanner(System.in);
-        
-        Rectangle r1 = new Rectangle();
+        Scanner input = new Scanner(System.in);    
         
         System.out.println("Ingrese la base del rectángulo.");
         r1.setBase(input.nextInt());
@@ -21,21 +20,21 @@ public class RectangleService {
         return r1;
     }
     
-    public void area(Rectangle r1) {
+    public void area() {
         int base = r1.getBase();
         int height = r1.getHeight();
         
         System.out.println("La superficie del rectángulo es: " + (base*height));
     } 
     
-    public void perimeter(Rectangle r1) {
+    public void perimeter() {
         int base = r1.getBase();
         int height = r1.getHeight();
         
         System.out.println("El perímetro del rectángulo es: " + ((2*base)+(2*height)));
     }
     
-    public void drawRectangle(Rectangle r1) {
+    public void drawRectangle() {
         int base = r1.getBase();
         int height = r1.getHeight();
         

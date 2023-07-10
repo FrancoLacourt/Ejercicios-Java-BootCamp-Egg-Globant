@@ -5,12 +5,12 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class PersonService {
+    
+    Person p1 = new Person();
 
     public Person createPerson() {
         Scanner sc = new Scanner(System.in);
-
-        Person p1 = new Person();
-
+        
         System.out.println("Ingrese su nombre por favor.");
         p1.setName(sc.nextLine());
 
@@ -29,7 +29,7 @@ public class PersonService {
         return p1;
     }
     
-    public void calculateAge(Person p1) {
+    public void calculateAge() {
         //Fecha actual:
         Date fechaActual = new Date();
         int currentAge;
@@ -39,13 +39,13 @@ public class PersonService {
         System.out.println("La edad de la persona es: " + currentAge + " años");
     }
     
-    public boolean youngerThan(Person p1, int newAge) {
+    public boolean youngerThan(int newAge) {
         Scanner sc = new Scanner(System.in);
         
         return (p1.getCurrentAge() < newAge);
     }
     
-    public void showPerson(Person p1) {
+    public void showPerson() {
         System.out.println("Nombre: " + p1.getName());
         System.out.println("Fecha de nacimiento: " + p1.getBirthdate());
     }

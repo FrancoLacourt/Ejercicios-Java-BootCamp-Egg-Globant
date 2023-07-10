@@ -4,16 +4,14 @@ package Service;
 import Entity.Person;
 import java.util.Scanner;
 
-
 public class PersonService {
+    
+    Person p1 = new Person ();
     
     public Person createPerson() {
         Scanner input = new Scanner (System.in).useDelimiter("\n");
         String answer;
-        
-        Person p1 = new Person ();
-        
-        
+                
         System.out.println("Ingrese el nombre de la persona.");
         p1.setName(input.nextLine());
         System.out.println("Ingrese la edad de la persona.");
@@ -39,7 +37,7 @@ public class PersonService {
         return p1;
     }
     
-    public int calculateBmi(Person p1) {
+    public int calculateBmi() {
         double weight = p1.getWeight();
         double height = p1.getHeight();
         double result = (weight/(Math.pow(height, 2)));
@@ -56,27 +54,26 @@ public class PersonService {
         }
     }
     
-    public boolean legalAge (Person p1) {
+    public boolean legalAge () {
        if (p1.getAge() >= 18) {
            p1.setLegalAgePerson((p1.getLegalAgePerson()+1));
        }
         return p1.getAge() >= 18;   
     }
     
-    public int checkBelowWeight(Person p1) {
+    public int checkBelowWeight() {
         return p1.getBelowIdealWeight();
     }
     
-    public int checkIdealWeight(Person p1) {
+    public int checkIdealWeight() {
         return p1.getIdealWeight();
     }
     
-    public int checkAboveWeight(Person p1) {
+    public int checkAboveWeight() {
         return p1.getAboveIdealWeight();
     }
     
-    public int checkLegalAge(Person p1) {
+    public int checkLegalAge() {
         return p1.getLegalAgePerson();
-    }
-    
+    }  
 }

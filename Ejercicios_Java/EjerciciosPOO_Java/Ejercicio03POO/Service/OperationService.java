@@ -4,13 +4,12 @@ package Service;
 import Entity.Operation;
 import java.util.Scanner;
 
-
 public class OperationService {
+    
+    Operation number = new Operation();
     
     public Operation createOperation() {    
     Scanner input = new Scanner(System.in);
-    
-    Operation number = new Operation();
     
         System.out.println("Ingrese el primer número.");
         number.setNumber1(input.nextInt());
@@ -20,7 +19,7 @@ public class OperationService {
         return number;
     }
     
-    public void addition(Operation number) {
+    public void addition() {
         int num1 = number.getNumber1();
         int num2 = number.getNumber2();
         
@@ -29,7 +28,7 @@ public class OperationService {
         System.out.println("El resultado de sumar " + num1 + " + " + num2 + " es: " + sum);
     }
     
-    public void substract(Operation number) {
+    public void substract() {
         int num1 = number.getNumber1();
         int num2 = number.getNumber2();
         
@@ -38,7 +37,7 @@ public class OperationService {
         System.out.println("El resultado de restar " + num1 + " - " + num2 + " es: " + substraction);
     }
     
-    public void multiply(Operation number) {
+    public void multiply() {
         int num1 = number.getNumber1();
         int num2 = number.getNumber2();
         
@@ -53,7 +52,7 @@ public class OperationService {
         }
     }
     
-    public void divide(Operation number) {
+    public void divide() {
         int num1 = number.getNumber1();
         int num2 = number.getNumber2();
         double division = (double) num1/num2;
@@ -67,5 +66,4 @@ public class OperationService {
             System.out.println("El resultado de dividir " + num1 + " / " + num2 + " es: " + division);
         }
     }
-    
 }

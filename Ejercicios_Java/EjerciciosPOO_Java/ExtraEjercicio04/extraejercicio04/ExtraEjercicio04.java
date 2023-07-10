@@ -18,9 +18,7 @@ package extraejercicio04;
 
 import Service.NifService;
 
-
 public class ExtraEjercicio04 {
-
 
     public static void main(String[] args) {
         NifService ns = new NifService();

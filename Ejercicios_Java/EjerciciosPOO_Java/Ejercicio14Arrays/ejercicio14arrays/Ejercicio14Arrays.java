@@ -15,19 +15,15 @@ números de un celular. Para ello, puede utilizarse un bucle repetitivo
 */
 package ejercicio14arrays;
 
-import Entity.Mobile;
 import Service.MobileService;
 
-
 public class Ejercicio14Arrays {
-
 
     public static void main(String[] args) {
         
         MobileService ms = new MobileService();
-        Mobile cellPhone = ms.loadCellPhone();
+        ms.loadCellPhone();
         System.out.println("");
-        System.out.println(cellPhone.toString());
+        
     }
-    
 }

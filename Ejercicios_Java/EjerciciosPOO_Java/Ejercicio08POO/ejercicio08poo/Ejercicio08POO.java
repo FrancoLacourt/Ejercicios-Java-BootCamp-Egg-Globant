@@ -30,13 +30,10 @@ h) Método contiene(String letra), deberá comprobar si la frase contiene una le
 ingresa el usuario y devuelve verdadero si la contiene y falso si no.
 */
 
-
 package ejercicio08poo;
 
-import Entity.StringPhrase;
 import Service.StringService;
 import java.util.Scanner;
-
 
 public class Ejercicio08POO {
 
@@ -45,37 +42,29 @@ public class Ejercicio08POO {
         String phrase;
         
         StringService ss = new StringService();
-        StringPhrase s1 = new StringPhrase();
         
-        //Lo creo en el main porque eso pide el ejercicio.
-        //Personalmente me parecería más cómodo usar un método para crear la frase.
-        System.out.println("Ingrese una frase.");
-        
-        phrase = input.nextLine();
-        s1.setPhrase(phrase);
-        s1.setStringLength(phrase.length());
+        ss.createString();
         System.out.println("");
         
-        ss.showVowels(s1);
+        ss.showVowels();
         System.out.println("");
         
-        ss.invertPhrase(s1);
+        ss.invertPhrase();
         System.out.println("");
         
-        ss.timesRepeated(s1);
+        ss.timesRepeated();
         System.out.println("");
         
-        ss.compareLengths(s1);
+        ss.compareLengths();
         System.out.println("");
         
-        ss.mixPhrases(s1);
+        ss.mixPhrases();
         System.out.println("");
         
-        ss.replace(s1);
+        ss.replace();
         System.out.println("");
         
-        
-        if (ss.contains(s1)) {
+        if (ss.contains()) {
             System.out.println("La letra ingresada se encuentra en la frase.");
         } else {
             System.out.println("La letra ingresada NO se encuentra en la frase.");

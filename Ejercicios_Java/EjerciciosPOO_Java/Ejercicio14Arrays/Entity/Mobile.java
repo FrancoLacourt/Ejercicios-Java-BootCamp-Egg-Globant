@@ -72,6 +72,6 @@ public class Mobile {
 
     @Override
     public String toString() {
-        return "Marca =" + brand + ", Precio = $" + price + ", Modelo = " + model + ", RAM = " + ram + "GB, Almacenamiento = " + storage + "GB, Código = " + Arrays.toString(code);
+        return "Marca = " + brand + ", Precio = $" + price + ", Modelo = " + model + ", RAM = " + ram + "GB, Almacenamiento = " + storage + "GB, Código = " + Arrays.toString(code);
     }
 }

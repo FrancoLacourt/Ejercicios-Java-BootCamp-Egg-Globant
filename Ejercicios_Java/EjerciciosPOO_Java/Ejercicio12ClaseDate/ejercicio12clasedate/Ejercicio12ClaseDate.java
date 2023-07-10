@@ -17,34 +17,31 @@ anterior.
 */
 package ejercicio12clasedate;
 
-import Entity.Person;
 import Service.PersonService;
 import java.util.Scanner;
 
-
 public class Ejercicio12ClaseDate {
-
 
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
         
         PersonService ps = new PersonService();
-        Person p1 = ps.createPerson();
+        ps.createPerson();
         System.out.println("");
         
-        ps.calculateAge(p1);
+        ps.calculateAge();
         System.out.println("");
         
         System.out.println("Ingrese la edad de la nueva persona:");
         int newAge = sc.nextInt();
-        if (ps.youngerThan(p1, newAge)) {
+        if (ps.youngerThan(newAge)) {
             System.out.println("La nueva persona es mayor que la persona original");
         } else {
             System.out.println("La nueva persona es menor que la persona original");
         }
         System.out.println("");
         
-        ps.showPerson(p1);
+        ps.showPerson();
     }
 }

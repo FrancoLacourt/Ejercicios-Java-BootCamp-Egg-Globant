@@ -13,7 +13,6 @@ Superficie = base * altura / Perímetro = (base + altura) * 2.
 
 package ejercicio04poo;
 
-import Entity.Rectangle;
 import Service.RectangleService;
 
 public class Ejercicio04POO {
@@ -21,12 +20,12 @@ public class Ejercicio04POO {
     public static void main(String[] args) {
         
         RectangleService rs = new RectangleService();
-        Rectangle r1 = rs.createRectangle();
+        rs.createRectangle();
         System.out.println("");
-        rs.area(r1);
+        rs.area();
         System.out.println("");
-        rs.perimeter(r1);
+        rs.perimeter();
         System.out.println("");
-        rs.drawRectangle(r1);
+        rs.drawRectangle();
     }
 }

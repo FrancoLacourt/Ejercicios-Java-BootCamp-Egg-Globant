@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 public class ServiceCoffe {
     
+    CoffeMaker c1 = new CoffeMaker();
+    
     public CoffeMaker createCoffeMaker () {
         Scanner input = new Scanner(System.in);
-        
-        CoffeMaker c1 = new CoffeMaker();
         
         System.out.println("Ingrese la capacidad máxima que tendrá la cafetera (en ml).");
         c1.setMaxCapacity(input.nextInt());
@@ -18,11 +18,11 @@ public class ServiceCoffe {
         return c1;
     }
     
-    public void fillCoffeMaker (CoffeMaker c1) {
+    public void fillCoffeMaker () {
         c1.setCurrentAmount(c1.getMaxCapacity());
     }
     
-    public void serveCup (CoffeMaker c1) {
+    public void serveCup () {
         Scanner input = new Scanner(System.in);
         int coffe;
         
@@ -39,15 +39,15 @@ public class ServiceCoffe {
         }
     }
     
-    public void emptyCoffeMaker (CoffeMaker c1) {
+    public void emptyCoffeMaker () {
         c1.setCurrentAmount(0);
     }
     
-    public void checkCurrentAmount (CoffeMaker c1) {
+    public void checkCurrentAmount () {
         System.out.println("Actualmente hay " + c1.getCurrentAmount() + "ml en la cafetera.");
     }
     
-    public void addCoffe (CoffeMaker c1) {
+    public void addCoffe () {
         Scanner input = new Scanner(System.in);
         int addedCoffe;
         
@@ -60,5 +60,4 @@ public class ServiceCoffe {
             c1.setCurrentAmount(c1.getCurrentAmount() + addedCoffe);
         }
     }
-    
 }

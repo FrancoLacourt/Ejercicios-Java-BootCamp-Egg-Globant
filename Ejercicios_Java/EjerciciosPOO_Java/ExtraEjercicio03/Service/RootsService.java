@@ -4,12 +4,12 @@ package Service;
 import Entity.Roots;
 import java.util.Scanner;
 
-
 public class RootsService {
+    
+    Roots coef = new Roots();
     
     public Roots loadCoefficients() {
         Scanner sc = new Scanner(System.in);
-        Roots coef = new Roots();
         
         System.out.println("Ingrese el valor del coeficiente `a`.");
         coef.setA(sc.nextDouble());
@@ -21,7 +21,7 @@ public class RootsService {
         return coef;
     }
     
-    public void getDiscriminant(Roots coef) {
+    public void getDiscriminant() {
         double discriminant;
         double a = coef.getA();
         double b = coef.getB();
@@ -31,48 +31,48 @@ public class RootsService {
         coef.setDiscriminant(discriminant);
     }
     
-    public boolean hasRoots(Roots coef) {
+    public boolean hasRoots() {
         
         return (coef.getDiscriminant()> 0);
     }
     
-    public boolean hasRoot(Roots coef) {
+    public boolean hasRoot() {
         
         return (coef.getDiscriminant()==0);
     }
     
-    public void getRoots(Roots coef) {
+    public void getRoots() {
         double root1;
         double root2;
         double a = coef.getA();
         double b = coef.getB();
         double c = coef.getC();
         
-        if (hasRoots(coef)) {
+        if (hasRoots()) {
             root1 = (-b + (Math.sqrt((Math.pow(b, 2))-(4*a*c))))/(2*a);
             root2 = (-b - (Math.sqrt((Math.pow(b, 2))-(4*a*c))))/(2*a);
             System.out.println("Las raíces de esta ecuación son: " + root1 + " y " + root2);
         }
     }
     
-    public void getRoot(Roots coef) {
+    public void getRoot() {
         double root;
         double a = coef.getA();
         double b = coef.getB();
         double c = coef.getC();
         
-        if (hasRoot(coef)) {
+        if (hasRoot()) {
             root = (-b + (Math.sqrt((Math.pow(b, 2))-(4*a*c))))/(2*a);
             System.out.println("La única raíz de esta ecuación es: " + root);
         }
     }
     
-    public void calculate(Roots coef) {
-        getDiscriminant(coef);
-        if (hasRoots(coef)) {
-            getRoots(coef);
-        } else if (hasRoot(coef)) {
-            getRoot(coef);
+    public void calculate() {
+        getDiscriminant();
+        if (hasRoots()) {
+            getRoots();
+        } else if (hasRoot()) {
+            getRoot();
         } else {
             System.out.println("Ninguna de las soluciones son números reales.");
         }

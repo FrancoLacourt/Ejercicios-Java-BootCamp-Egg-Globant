@@ -23,13 +23,10 @@ se repite el encuentro.
 */
 package ejercicio13arrays;
 
-import Entity.Course;
 import Service.CourseService;
 import java.util.Scanner;
 
-
 public class Ejercicio13Arrays {
-
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -37,7 +34,7 @@ public class Ejercicio13Arrays {
         int option;
         
         CourseService cs = new CourseService();
-        Course course = cs.createCourse();
+        cs.createCourse();
         
         while (!exit) {
             System.out.println("1. Mostrar ganancia semanal");
@@ -50,11 +47,11 @@ public class Ejercicio13Arrays {
             
             switch (option) {
                 case 1:
-                    cs.calculateWeeklyEarnings(course);
+                    cs.calculateWeeklyEarnings();
                     System.out.println("");
                     break;
                 case 2:
-                    cs.showStudents(course);
+                    cs.showStudents();
                     System.out.println("");
                     break;
                 case 3:

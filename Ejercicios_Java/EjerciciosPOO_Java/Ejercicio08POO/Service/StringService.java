@@ -4,8 +4,24 @@ import Entity.StringPhrase;
 import java.util.Scanner;
 
 public class StringService {
+    Scanner input = new Scanner(System.in);
+    
+    StringPhrase s1 = new StringPhrase();
+    
+    public StringPhrase createString() {
+        
+        String phrase;
+        
+        System.out.println("Ingrese una frase.");
+        
+        phrase = input.nextLine();
+        s1.setPhrase(phrase);
+        s1.setStringLength(phrase.length());
+        
+        return s1;
+    }
 
-    public void showVowels(StringPhrase s1) {
+    public void showVowels() {
         int vowelsCounter = 0;
         String phrase = s1.getPhrase();
 
@@ -20,8 +36,8 @@ public class StringService {
         System.out.println("En la frase ingresada hay " + vowelsCounter + " vocales.");
     }
 
-    public void invertPhrase(StringPhrase s1) {
-        String phrase = s1.getPhrase();
+    public void invertPhrase() {
+        String phrase = s1.getPhrase().toLowerCase();
 
         System.out.println("La frase ingresada al revés queda de la siguiente manera");
         for (int i = s1.getStringLength() - 1; i >= 0; i--) {
@@ -30,8 +46,7 @@ public class StringService {
         System.out.println("");
     }
 
-    public void timesRepeated(StringPhrase s1) {
-        Scanner input = new Scanner(System.in);
+    public void timesRepeated() {
         String character;
         String phrase = s1.getPhrase();
         int characterCounter = 0;
@@ -48,8 +63,7 @@ public class StringService {
         System.out.println("El caracter " + character + " se repite " + characterCounter + " veces.");
     }
 
-    public void compareLengths(StringPhrase s1) {
-        Scanner input = new Scanner(System.in);
+    public void compareLengths() {
         String newPhrase;
 
         System.out.println("Ingrese otra frase para verificar si tiene la misma longitud que la frase original.");
@@ -62,8 +76,7 @@ public class StringService {
         }
     }
 
-    public void mixPhrases(StringPhrase s1) {
-        Scanner input = new Scanner(System.in);
+    public void mixPhrases() {
         String newPhrase;
         String phrase = s1.getPhrase();
 
@@ -73,10 +86,9 @@ public class StringService {
         System.out.println(phrase.concat(newPhrase));
     }
 
-    public void replace(StringPhrase s1) {
-        Scanner input = new Scanner(System.in);
+    public void replace() {
         String character;
-        String phrase = s1.getPhrase();
+        String phrase = s1.getPhrase().toLowerCase();
 
         System.out.println("Ingrese el caracter por el cual desea reemplazar todas las `a` ");
         character = input.nextLine();
@@ -85,8 +97,7 @@ public class StringService {
         //Antes tendría que haber hecho que una vez ingresado el texto, lo pase a minúsculas. Para no tener problemas por si es mayúscula o minúscula.
     }
 
-    public boolean contains(StringPhrase s1) {
-        Scanner input = new Scanner(System.in);
+    public boolean contains() {
         String phrase = s1.getPhrase();
         String letter;
 

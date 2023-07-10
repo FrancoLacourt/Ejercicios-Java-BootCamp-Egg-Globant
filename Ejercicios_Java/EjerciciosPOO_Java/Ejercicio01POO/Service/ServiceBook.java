@@ -4,11 +4,12 @@ import Entity.Book;
 import java.util.Scanner;
 
 public class ServiceBook {
+    Book b1 = new Book();
 
     Scanner input = new Scanner(System.in).useDelimiter("\n");
     
     public Book loadBook () {
-        Book b1 = new Book();
+        
         
         System.out.println("Ingrese el número de ISBN.");
         b1.setIsbn(input.nextInt());
@@ -22,11 +23,10 @@ public class ServiceBook {
         return b1;
     }
     
-    public void showBook (Book b1) {
+    public void showBook () {
         System.out.println("El número de ISBN es: " + b1.getIsbn());
         System.out.println("El título del libro es: " + b1.getTitle());
         System.out.println("El nombre del autor del libro es: " + b1.getAuthor());
-        System.out.println("El número de páginas que tiene el libreo es: " + b1.getPages());
+        System.out.println("El número de páginas que tiene el libro es: " + b1.getPages());
     }
-
 }

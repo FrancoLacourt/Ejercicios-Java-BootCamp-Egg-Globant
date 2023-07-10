@@ -4,10 +4,11 @@ package Service;
 import Entity.Mobile;
 import java.util.Scanner;
 
-
 public class MobileService {
     
-    public void enterCode(Mobile cellPhone) {
+    Mobile cellPhone = new Mobile();
+    
+    public void enterCode() {
         Scanner sc = new Scanner(System.in);
         int[] code = new int [7];
         for (int i = 0; i < 7; i++) {
@@ -18,7 +19,6 @@ public class MobileService {
     
     public Mobile loadCellPhone () {
         Scanner sc = new Scanner(System.in);
-        Mobile cellPhone = new Mobile();
         
         System.out.println("Ingrese la marca del celular.");
         cellPhone.setBrand(sc.nextLine());
@@ -31,7 +31,9 @@ public class MobileService {
         cellPhone.setRam(sc.nextInt());
         System.out.println("Ingrese el almacenamiento del celular.");
         cellPhone.setStorage(sc.nextInt());
-        enterCode(cellPhone);
+        enterCode();
+        
+        System.out.println(cellPhone.toString());
         
         return cellPhone;
     }

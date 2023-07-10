@@ -19,23 +19,20 @@ cuanto quedó la taza.
 recibe y se añade a la cafetera la cantidad de café indicada.
 */
 
-
 package ejercicio06poo;
 
-import Entity.CoffeMaker;
 import Service.ServiceCoffe;
 import java.util.Scanner;
 
-
 public class Ejercicio06POO {
-
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         boolean exit = false;
         int option;
         ServiceCoffe sc = new ServiceCoffe();
-        CoffeMaker c1 = sc.createCoffeMaker();
+        
+        sc.createCoffeMaker();
         
         System.out.println("");
         System.out.println("Bienvenido a la cafetera inteligente NESPRESSO");
@@ -53,33 +50,30 @@ public class Ejercicio06POO {
             
             switch (option) {
                 case 1:
-                    sc.fillCoffeMaker(c1);
+                    sc.fillCoffeMaker();
                     System.out.println("");
                     break;
                 case 2:
-                    sc.serveCup(c1);
+                    sc.serveCup();
                     System.out.println("");
                     break;
                 case 3:
-                    sc.emptyCoffeMaker(c1);
+                    sc.emptyCoffeMaker();
                     System.out.println("");
                     break;
                 case 4:
-                    sc.addCoffe(c1);
+                    sc.addCoffe();
                     System.out.println("");
                     break;
                 case 5:
-                    sc.checkCurrentAmount(c1);
+                    sc.checkCurrentAmount();
                     System.out.println("");
                     break;
                 case 6:
                     System.out.println("Saliendo del menú...");
                     exit = true;
                     break;
-            }
-            
+            }   
         }
-
-    }
-    
+    }   
 }

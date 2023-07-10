@@ -17,13 +17,10 @@ h) Método consultarDatos(): permitirá mostrar todos los datos de la cuenta
 
 */
 
-
 package ejercicio5poo;
 
-import Entity.Account;
 import Service.AccountService;
 import java.util.Scanner;
-
 
 public class Ejercicio5POO {
 
@@ -38,8 +35,7 @@ public class Ejercicio5POO {
         System.out.println("BANCO SANTANDER");
         System.out.println("");
         
-        Account a1 = as.createAccount();
-        
+        as.createAccount();
         
         while (!exit) {
             
@@ -55,33 +51,30 @@ public class Ejercicio5POO {
             
             switch (option) {
                 case 1:
-                    as.deposit(a1);
+                    as.deposit();
                     System.out.println("");
                     break;
                 case 2:
-                    as.withdraw(a1);
+                    as.withdraw();
                     System.out.println("");
                     break;
                 case 3:
-                    as.fastWithdraw(a1);
+                    as.fastWithdraw();
                     System.out.println("");
                     break;
                 case 4:
-                    as.checkBalance(a1);
+                    as.checkBalance();
                     System.out.println("");
                     break;
                 case 5:
-                    as.checkUserInfo(a1);
+                    as.checkUserInfo();
                     System.out.println("");
                     break;
                 case 6:
                     System.out.println("Saliendo de la cuenta...");
                     exit = true;
                     break;
-            }
-            
-        }
-        
-    }
-    
+            }            
+        }        
+    }   
 }

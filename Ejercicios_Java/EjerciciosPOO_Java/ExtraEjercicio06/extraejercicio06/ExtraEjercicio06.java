@@ -26,7 +26,6 @@ package extraejercicio06;
 
 import Service.HangmanService;
 
-
 public class ExtraEjercicio06 {
     
     public static void main(String[] args) {

@@ -5,10 +5,11 @@ import Entity.Course;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
 public class CourseService {
     
-    public void loadStudents(Course course) {
+    Course course = new Course();
+    
+    public void loadStudents() {
         Scanner sc = new Scanner(System.in);
         String[] students = new String[5];
         for (int i = 0; i < 5; i++) {
@@ -20,7 +21,6 @@ public class CourseService {
     
     public Course createCourse() {
         Scanner sc = new Scanner(System.in);
-        Course course = new Course();
         
         System.out.println("Ingrese el nombre del curso.");
         course.setCourseName(sc.nextLine());
@@ -42,19 +42,19 @@ public class CourseService {
         System.out.println("Ingrese cuál es el precio por hora.");
         course.setPricePerHour(sc.nextInt());
         
-        loadStudents(course);
+        loadStudents();
         
         return course;
     }
     
-    public void calculateWeeklyEarnings(Course course) {
+    public void calculateWeeklyEarnings() {
         double weeklyEarnings;
         
         weeklyEarnings = (course.getHoursPerDay() * course.getPricePerHour() * 5 * course.getDaysPerWeek());
         System.out.println("La ganancia semanal en este curso es de: $" + weeklyEarnings);
     }
     
-    public void showStudents(Course course) {
+    public void showStudents() {
         System.out.println("Los 5 alumnos son:");
         System.out.println(Arrays.toString(course.getStudents()));
     }

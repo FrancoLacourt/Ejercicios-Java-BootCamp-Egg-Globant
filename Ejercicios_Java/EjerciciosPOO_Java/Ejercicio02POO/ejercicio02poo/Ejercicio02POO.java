@@ -10,21 +10,17 @@ e) Método perimetro(): para calcular el perímetro (Perimetro = 2 ∗ π ∗ ra
  */
 package ejercicio02poo;
 
-import Entity.Circumference;
 import Service.CircumferenceService;
 
 public class Ejercicio02POO {
-
+    
     public static void main(String[] args) {
         
         CircumferenceService cs = new CircumferenceService();
-        Circumference c1 = cs.createCircumference();
+        cs.createCircumference();
         System.out.println("");
-        cs.area(c1);
+        cs.area();
         System.out.println("");
-        cs.perimetro(c1);
-        
-
+        cs.perimetro();
     }
-
 }

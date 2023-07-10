@@ -33,36 +33,27 @@ también calcularemos un porcentaje de cuantos son mayores de edad y cuantos men
 package ejercicio07poo;
 
 import Service.PersonService;
-import Entity.Person;
 
 public class Ejercicio07POO {
 
     public static void main(String[] args) {
-        int belowWeight = 0;
-        int idealWeight = 0;
-        int aboveWeight = 0;
-        int legalAge = 0;
 
         PersonService ps = new PersonService();
 
         for (int i = 0; i < 4; i++) {
             System.out.println("Ingrese los datos de la persona " + (i + 1));
 
-            Person person = ps.createPerson();
+            ps.createPerson();
             System.out.println("");
-            ps.calculateBmi(person);
+            ps.calculateBmi();
             System.out.println("");
-            ps.legalAge(person);
+            ps.legalAge();
 
-            belowWeight += (ps.checkBelowWeight(person));
-            idealWeight += (ps.checkIdealWeight(person));
-            aboveWeight += (ps.checkAboveWeight(person));
-            legalAge += (ps.checkLegalAge(person));
         }
         
-        System.out.println(belowWeight + " personas están por debajo de su peso ideal.");
-        System.out.println(idealWeight + " personas están en su peso ideal.");
-        System.out.println(aboveWeight + " personas están por encima de su peso ideal.");
-        System.out.println(legalAge + " personas son mayores de edad (+18)");
+        System.out.println(ps.checkBelowWeight() + " personas están por debajo de su peso ideal.");
+        System.out.println(ps.checkIdealWeight() + " personas están en su peso ideal.");
+        System.out.println(ps.checkAboveWeight() + " personas están por encima de su peso ideal.");
+        System.out.println(ps.checkLegalAge() + " personas son mayores de edad (+18)");
     }
 }

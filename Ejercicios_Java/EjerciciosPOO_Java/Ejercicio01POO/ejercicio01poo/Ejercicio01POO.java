@@ -5,22 +5,17 @@ luego informar mediante otro método el número de ISBN, el título, el autor de
 numero de páginas.
 */
 
-
 package ejercicio01poo;
 
-import Entity.Book;
 import Service.ServiceBook;
 
-
 public class Ejercicio01POO {
-    
     
     public static void main(String[] args) {
         
         ServiceBook sb = new ServiceBook();
-        Book b1 = sb.loadBook();
+        sb.loadBook();
         System.out.println("");
-        sb.showBook(b1);
+        sb.showBook();
     }
-    
 }

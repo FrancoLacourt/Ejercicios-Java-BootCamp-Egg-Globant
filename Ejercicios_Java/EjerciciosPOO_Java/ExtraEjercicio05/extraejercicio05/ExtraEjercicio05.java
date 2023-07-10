@@ -13,9 +13,7 @@ package extraejercicio05;
 
 import Service.MonthsService;
 
-
 public class ExtraEjercicio05 {
-
 
     public static void main(String[] args) {
         MonthsService ms = new MonthsService();

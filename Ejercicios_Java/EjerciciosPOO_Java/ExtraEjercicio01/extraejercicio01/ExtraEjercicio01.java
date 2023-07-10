@@ -6,17 +6,14 @@ además definir los métodos getters y setters correspondientes.
 */
 package extraejercicio01;
 
-import Entity.Song;
 import Service.SongService;
-
 
 public class ExtraEjercicio01 {
 
-
     public static void main(String[] args) {
         SongService ss = new SongService();
-        Song s = ss.loadSong();
+        ss.loadSong();
         System.out.println("");
-        ss.showSong(s);
+        ss.showSong();
     }
 }

@@ -4,13 +4,11 @@ package Service;
 import Entity.Account;
 import java.util.Scanner;
 
-
 public class AccountService {
+    Account a1 = new Account();
     
     public Account createAccount() {
         Scanner input = new Scanner(System.in);
-        
-        Account a1 = new Account();
         
         System.out.println("Ingrese su número de cuenta.");
         a1.setAccountNumber(input.nextInt());
@@ -21,7 +19,7 @@ public class AccountService {
         return a1;
     }
     
-    public void deposit(Account a1) {
+    public void deposit() {
         Scanner input = new Scanner(System.in);
         double currentBalance = a1.getCurrentBalance();
         
@@ -29,7 +27,7 @@ public class AccountService {
         a1.setCurrentBalance((currentBalance + input.nextDouble()));
     }
     
-    public void withdraw(Account a1) {
+    public void withdraw() {
         Scanner input = new Scanner(System.in);
         double currentBalance = a1.getCurrentBalance();
         double money;
@@ -44,7 +42,7 @@ public class AccountService {
         }
     }
     
-    public void fastWithdraw(Account a1) {
+    public void fastWithdraw() {
         Scanner input = new Scanner(System.in);
         double currentBalance = a1.getCurrentBalance();
         double money;
@@ -59,11 +57,11 @@ public class AccountService {
         }
     }
     
-    public void checkBalance(Account a1) {
+    public void checkBalance() {
         System.out.println("Su saldo actual es: $" + a1.getCurrentBalance());
     }
     
-    public void checkUserInfo(Account a1) {
+    public void checkUserInfo() {
         System.out.println(a1);
     }
 }
