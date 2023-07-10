@@ -5,9 +5,7 @@ import Servicios.ServicioAlquiler;
 import Servicios.ServicioPelicula;
 import java.util.Scanner;
 
-
 public class DesafioPOO {
-
 
     public static void main(String[] args) {
         
@@ -22,8 +20,7 @@ public class DesafioPOO {
         /*
         Para trabajar con la misma instancia de ServicioPelicula en ambas clases, 
         debo pasar una instancia de ServicioPelicula desde acá a las clases ServicioAlquiler y ServicioPelicula.
-        */
-        
+        */      
         
         System.out.println("Bienvenido a mi tienda de Películas!");
         
@@ -78,7 +75,6 @@ public class DesafioPOO {
                 default:
                     System.out.println("Error. Debe ingresar una opción válida.");
             }
-            
         }
     }
 }
