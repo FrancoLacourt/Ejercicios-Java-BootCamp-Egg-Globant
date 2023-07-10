@@ -8,17 +8,14 @@ que existe entre los dos puntos que existen en la clase Puntos.
 */
 package extraejercicio2;
 
-import Entity.Points;
 import Service.PointsService;
-
 
 public class ExtraEjercicio2 {
 
-
     public static void main(String[] args) {
         PointsService ps = new PointsService();
-        Points points = ps.createPoints();
+        ps.createPoints();
         System.out.println("");
-        ps.getDistanceBetweenPoints(points);
+        ps.getDistanceBetweenPoints();
     }
 }
