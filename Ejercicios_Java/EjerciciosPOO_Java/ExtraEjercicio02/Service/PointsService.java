@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 public class PointsService {
 
+    Points points = new Points();
+
     public Points createPoints() {
         Scanner sc = new Scanner(System.in);
-        Points points = new Points();
-
+        
         System.out.println("Ingrese la coordenada X del punto 1");
         points.setX1(sc.nextFloat());
         System.out.println("Ingrese la coordenada Y del punto 1");
@@ -21,7 +22,7 @@ public class PointsService {
         return points;
     }
 
-    public void getDistanceBetweenPoints(Points points) {
+    public void getDistanceBetweenPoints() {
         float x1 = points.getX1();
         float y1 = points.getY1();
         float x2 = points.getX2();

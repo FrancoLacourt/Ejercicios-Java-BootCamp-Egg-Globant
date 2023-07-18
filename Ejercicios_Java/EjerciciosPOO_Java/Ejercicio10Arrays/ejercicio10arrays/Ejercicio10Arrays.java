@@ -13,9 +13,7 @@ package ejercicio10arrays;
 
 import java.util.Arrays;
 
-
 public class Ejercicio10Arrays {
-
 
     public static void main(String[] args) {
         
