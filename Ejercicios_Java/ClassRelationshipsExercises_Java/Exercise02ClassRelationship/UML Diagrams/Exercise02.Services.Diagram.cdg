@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Services">
+  <ClassDiagramComponents>
+    <Class name="GameService" package="Services" visibility="public" xPosition="192.0" yPosition="20.0">
+      <Fields>
+        <Field name="g" type="Game" visibility="package"/>
+        <Field name="rs" type="RevolverService" visibility="package"/>
+        <Field name="ps" type="PlayerService" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="fillGame" returnType="void" visibility="public">
+          <Argument type="WaterRevolver" name="r"/>
+          <Argument type="ArrayList&lt;Player&gt;" name="players"/>
+        </Method>
+        <Method name="startGame" returnType="void" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PlayerService" package="Services" visibility="public" xPosition="488.0" yPosition="428.0">
+      <Fields>
+        <Field name="rs" type="RevolverService" visibility="package"/>
+        <Field name="players" type="ArrayList&lt;Player&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="createPlayer" returnType="Player" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="addPlayerToTheList" returnType="void" visibility="public">
+          <Argument type="Player" name="player"/>
+        </Method>
+        <Method name="createAndAdd" returnType="void" visibility="public">
+          <Argument type="int" name="count"/>
+        </Method>
+        <Method name="getListOfPlayers" returnType="ArrayList&lt;Player&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RevolverService" package="Services" visibility="public" xPosition="735.0" yPosition="20.0">
+      <Fields>
+        <Field name="random" type="Random" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="loadRevolver" returnType="void" visibility="public">
+          <Argument type="WaterRevolver" name="r"/>
+        </Method>
+        <Method name="getWet" returnType="boolean" visibility="public">
+          <Argument type="WaterRevolver" name="r"/>
+        </Method>
+        <Method name="nextPosition" returnType="void" visibility="public">
+          <Argument type="WaterRevolver" name="r"/>
+        </Method>
+        <Method name="revolverInfo" returnType="String" visibility="public">
+          <Argument type="WaterRevolver" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="rs" source="Services.GameService" target="Services.RevolverService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ps" source="Services.GameService" target="Services.PlayerService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="rs" source="Services.PlayerService" target="Services.RevolverService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
